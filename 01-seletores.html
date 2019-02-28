@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Seletores</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="_css/bootstrap.css">
+	<style type="text/css">
+		.codigo{
+			color: #e83e8c;
+		}
+	</style>
+</head>
+<body class="bg-white">
+<header class="container-fluid">
+	<h1 class="text-sm-center">JQuery - Seletores</h1>
+</header>
+<main>
+	<div class="container">
+		<p style="text-indent: 5%;">Os seletores do JQuery são utilizados para manipular elementos HTML. Como citado <a target="_blank" href="00-sintaxe.html">nesta pagina</a>, sua estrutura é $("elemento").acao(). Todos os seletores JQuery começam com $().
+		<br>Por exemplo, o seletor <code>$("p")</code> seleciona todos os parágrafos da página.
+		</p>
+		<div class="container bg-light">
+			<h3 class="display-4">Exemplo</h3>
+			<pre><code class="codigo">
+$(document).ready(function(){
+	$("button").click(function{
+		$("p").hide(); <span class="text-secondary">//Esconde todos os parágrafos da página se algum botão for clicado.</span>
+	});
+});
+			</code></pre>
+		</div>
+	</div>
+
+	<div class="container">
+		<h2>Selecionando elementos por ID</h2>
+		<p>A seleção de elementos html através do seu id é feita por <code>$("#id")</code></p>
+		<div class="container-fluid bg-light">
+			<h3 class="display-4">Exemplo</h3>
+			<pre class="codigo"><code>
+$(document).ready(function(){
+	$("button").click(function(){
+		$("#test").hide(); <span class="text-secondary">//Esconde o elemento do id #test quando algum botão for clicado</span>
+	});
+});
+			</code></pre>
+		</div>
+		<div class="container">
+			<h3>Selecionando elementos por class</h3>
+			<p>Para selecionar por class, usamos <code>$(".teste")</code>.</p>
+		</div>
+		<div class="container">
+			<h3>Outros seletores</h3>
+			<table class="table table-striped">
+				<tr>
+						<th>Sintaxe</th>
+						<th>Descrição</th>
+				</tr>
+				<tr>
+					<td>$("*")</td>
+					<td>Selecionar todos os elementos</td>
+				</tr>
+				<tr>
+					<td>$(this)</td>
+					<td>Selecionar elemento atual</td>
+				</tr>
+				<tr>
+					<td>$("p.intro")</td>
+					<td>Selecionar todos os parágrafos da class intro</td>
+				</tr>
+				<tr>
+					<td>$("p:first")</td>
+					<td>Selecionar o primeiro parágrafo</td>
+				</tr>
+				<tr>
+					<td>$("ul li:first")</td>
+					<td>Selecionar o primeiro parágrafo</td>
+				</tr>
+				<tr>
+					<td>$("ul li:first-child")</td>
+					<td>Seleciona o primeiro li de cada ul</td>
+				</tr>
+				<tr>
+					<td>$("[href]")</td>
+					<td>Seleciona todos os elementos com o atributo href</td>
+				</tr>
+				<tr>
+					<td>$("a[target='_blank']"</td>
+					<td>Seleciona todos os elementos a que o atributo target seja igual a _blank</td>
+				</tr>
+				<tr>
+					<td>$("a[target!='_blank']")</td>
+					<td>Seleciona todos os elementos a que o atributo target seja diferente de _blank</td>
+				</tr>
+				<tr>
+					<td>$(":button")</td>
+					<td>Seleciona todos os elementos button e input que seja do tipo button</td>
+				</tr>
+				<tr>
+					<td>$("tr:even")</td>
+					<td>Seleciona todos os elementos tr que sejam pares</td>
+				</tr>
+				<tr>
+					<td>$("tr:odd")</td>
+					<td>Seleciona todos os elementos tr que sejam ímpares</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+</main>
+<script src="_js/jquery-3.3.1.js"></script>
+
+</body>
+</html>
