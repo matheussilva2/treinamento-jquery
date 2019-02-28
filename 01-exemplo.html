@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery - Exemplos - Seletores</title>
+	<link rel="stylesheet" type="text/css" href="_css/bootstrap.css">
+</head>
+<body>
+	<header class="container-fluid">
+		<h1 class="text-sm-center">Seletores - Exemplos - JQuery</h1>
+	</header>
+	<main class="container">
+		<h4>Esconda o parágrafo!</h4>
+		<div class="container-fluid bg-light">
+			<p id="hide-p" style="text-indent: 5%;">Ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<button id="hide-btn" class="btn btn-success">Esconder</button>
+		<button id="show-btn" class="btn btn-primary">Mostrar</button>
+		</div>
+		<hr>
+		<h4>Faça uma descoloração dos elementos</h4>
+		<div class="container-fluid bg-light">
+			<p class="color-item" style="color: red;">Lorem Ipsum</p>
+			<p class="color-item" style="color: yellow;">Lorem Ipsum</p>
+			<p class="color-item" style="color: green;">Lorem Ipsum</p>
+			<p class="color-item" style="color: blue;">Lorem Ipsum</p>
+			<p class="color-item" style="color: purple;">Lorem Ipsum</p>
+		</div>
+		<button class="btn btn-success" id="color-btn">Descolorir</button>
+		<hr>
+		<div class="container jumbotron">
+			<h2>Informação</h2>
+			<p>Este conteúdo foi explicado na página sobre seletores. <a target="_blank" href="01-seletores.html">Clique aqui</a> para acessá-la.</p>
+		</div>
+	</main>
+
+	<script src="_js/jquery-3.3.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#hide-btn").click(function(){
+				$("#hide-p").hide('300');
+				$("#hide-btn").text("Parágrafo Oculto");
+			});
+			$("#color-btn").click(function(){
+				$(".color-item").css('color', 'gray');
+			});
+			$("#show-btn").click(function(){
+				$("p:first").show('300');
+				$("#hide-btn").text("Esconder")
+			});
+		});
+	</script>
+
+</body>
+</html>
