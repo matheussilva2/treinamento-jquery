@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery - Hide/Show</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="_css/bootstrap.css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+</head>
+<body>
+	<header class="container-fluid">
+		<h1>JQuery - Hide/Show</h1> 
+	</header>
+	<article class="container bg-light pt-3 mb-4">
+		<header>
+			<h2>Os métodos show e hide</h2>
+		</header>
+		<p>Os métodos show() e hide() servem para ocultar ou mostrar um elementos.</p>
+		<code>$("p").hide()</code><br>
+		<code>$("p").show()</code><br><br>
+		<p id="hidep">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<button class="btn btn-warning" id="hidebtn">Esconder Parágrafo</button>
+		<hr>
+		<p id="showp" style="display: none;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<button class="btn btn-success" id="showbtn">Mostrar Parágrafo</button>
+		<br><br>
+		<h3>O método toggle()</h3>
+		<p>Este método faz uma operação: se estiver escondido, ele mostra e vice-versa.</p>
+		<p id="togglep">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<button id="togglebtn" class="btn btn-light">Esconder/Mostrar Parágrafo</button><br><br>
+
+		<h3>Velocidade</h3>
+		<p>Todos os métodos carregam dois argumentos: velocidade e callback. A velocidade será "slow", "fast" ou o valor em ms.</p>
+
+		<p id="togglepf">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<button id="togglebtnf" class="btn btn-success">Esconder/Mostrar Parágrafo Rapido</button><br><br>
+
+		<p id="toggleps">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<button id="togglebtns" class="btn btn-success">Esconder/Mostrar Parágrafo Devagar</button><br><br>
+
+		<p id="togglepms">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<button id="togglebtnms" class="btn btn-success">Esconder/Mostrar Parágrafo (0.45s)</button><br><br>
+	</article>
+	<script src="_js/jquery-3.3.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#hidebtn").click(function(){
+				$("#hidep").hide();
+			});
+			$("#showbtn").click(function(){
+				$("#showp").show();
+			});
+			$("#togglebtn").click(function(){
+				$("#togglep").toggle();
+			});
+			$("#togglebtns").click(function(){
+				$("#toggleps").toggle("slow");
+			});
+			$("#togglebtnf").click(function(){
+				$("#togglepf").toggle("fast");
+			});
+			$("#togglebtnms").click(function(){
+				$("#togglepms").toggle(450);
+			});
+		});
+	</script>
+</body>
+</html>
