@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery - Eventos</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="_css/bootstrap.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+	<header class="container">
+		<h2 class="text-sm-center">JQuery - Eventos</h2>
+	</header>
+	<main class="container">
+		<article>
+			<h2>O que são eventos?</h2>
+			<p>Os eventos são o momento em que certa ação deve ser executada. Por exemplo, podemos chamar um script quando:
+				<ul>
+					<li>Quando mover o mouse por um elemento.</li>
+					<li>Quando clicar em um elemento.</li>
+					<li>Quando selecionar uma opção em um input do tipo radio.</li>
+				</ul>
+				Segue alguns eventos <abbr title="Document Object Model">DOM</abbr>:
+			</p>
+			<table class="table table-striped">
+				<tr>
+					<th>Eventos do Mouse</th>
+					<th>Eventos de Teclado</th>
+					<th>Eventos de Formulário</th>
+					<th>Eventos de Documento/janela</th>
+				</tr>
+				<tr>
+					<td>click</td>
+					<td>keypress</td>
+					<td>submit</td>
+					<td>load</td>
+				</tr>
+				<tr>
+					<td>dblclick</td>
+					<td>keydown</td>
+					<td>change</td>
+					<td>resize</td>
+				</tr>
+				<tr>
+					<td>mouseenter</td>
+					<td>keyup</td>
+					<td>focus</td>
+					<td>scroll</td>
+				</tr>
+				<tr>
+					<td>mouseleave</td>
+					<td></td>
+					<td>blur</td>
+					<td>unload</td>
+				</tr>
+			</table>
+			<h4>Exemplo:</h4>
+			<code><pre>
+$("p").click(function (){
+	//Acontece algo quando clicar em qualquer parágrafo
+});
+			</pre></code>
+		</article>
+		<article>
+			<h2>Eventos do JQuery usados comumente</h2>
+			<strong>$(document).ready()</strong>
+			<p>O método <code>$(document).ready()</code> executa algo aconteça quando a página for carregada.</p>
+
+			<strong>click()</strong>
+			<p>O método <code>click()</code> executa algo aconteça quando o elemento for clicado. Exemplo: <code><pre>$("#botao").click(function(){//Acontece algo});</pre></code></p>
+
+			<strong>dblclick()</strong>
+			<p>O método <code>dblclick()</code> executa algo quando o usuário clicar duas vezes (double-click) em um elemento.</p>
+
+			<strong>mouseenter()</strong>
+			<p>O método <code>mouseenter()</code> executa algo quando o usuário passar o mouse por cima de um elemento.</p>
+
+			<strong>mouseleave()</strong>
+			<p>O método <code>mouseleave()</code> executa algo quando o usuário tirar o mouse do elemento.</p>
+
+			<strong>mousedown()</strong>
+			<p>O método <code>mousedown()</code> executa algo quando o usuário apertar o botão do mouse enquanto estiver com o cursor sob o elemento.</p>
+
+			<strong>mouseup()</strong>
+			<p>O método <code>mouseup()</code> executa algo quando o usuário soltar o botão do mouse enquanto estiver com o cursor sob o elemento.</p>
+
+			<strong>hover()</strong>
+			<p>O método <code>hover()</code> pega dois parâmetros, uma função para ser executada quando o cursor entrar no elemento e outra quando sair.<br/>Exemplo:</p>
+			<code><pre>
+$("#elemento").hover(function(){
+	//Primeira função
+}, function(){
+	//Segunda função
+}
+);
+			</pre></code>
+
+			<strong>focus()</strong>
+			<p>O método <code>focus()</code> executa algo quando foca (seleciona) um campo do formulário.</p>
+
+			<strong>blur()</strong>
+			<p>Inversamente do focus, este executa uma função quando o campo perder o foco.</p>
+
+			<strong>on()</strong>
+			<p>O método <code>on()</code> executa uma função quando acontecer um ou mais eventos. <br></p>
+			<pre><code>
+$("p").on("click", function(){
+	//Executar esta função quando clicar em algum parágrafo.
+});
+
+$("p").on({
+	mouseenter: function(){
+		//ação quando o mouse entrar no elemento
+	},
+	mouseleave: function(){
+		//Ação quando o mouse sair do elemento
+	},
+	click: function(){
+		//Ação quando o elemento for clicado
+	}
+});
+			</code></pre>
+
+		</article>
+	</main>
+	<script src="_js/jquery-3.3.1.js"></script>
+</body>
+</html>
