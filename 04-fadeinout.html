@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery - Fade In/Out</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="_css/bootstrap.css">
+	<link name="viewport" content="width=device-width, intial-scale=1, shrink-to-fit=no"/>
+	<style type="text/css">
+		p{
+			text-indent: 5%;
+		}
+	</style>
+</head>
+<body>
+	<header class="container-fluid">
+		<h1 class="text-dark text-center">JQuery - Fade-in/out</h1>
+	</header>
+	<article class="container">
+		<h2>Os métodos fadeIn, fadeOut e fadeToggle</h2>
+		<p class="bg-light">
+			Este evento faz o elemento sumir ou aparecer através de uma animação baseada na mudança da opacidade. Os métodos podem carregar até dois parâmetros: velocidade(SLOW, FAST ou milissegundos) e callback. 
+		</p>
+		<code><pre>
+$("#fade-btn").click(function(){
+	$("#fade-div").fadeIn(velocidade,callback); //Aparecer
+	$("#fade-div").fadeOut(velocidade,callback); //Sumir
+	$("#fade-div").fadeToggle(velocidade,callback); //fadeIn se estiver escondido e fadeOut se estiver aparecendo
+});
+		</pre></code>
+		<h2>O método fateTo()</h2>
+		<p>Diferente do método fadeIn e fadeOut, este método permite que você faça um fade para uma opacidade específica: <br/><code>fadeTo(velocidade, opacidade, callback);</code></p>
+		
+		<h2>Exemplos</h2>
+		<div class="container bg-dark text-white pb-2 mb-2">
+			<h3>fadeOut()</h3>
+			<p id="fadeOutP">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur.</p>
+			<button type="button" class="btn btn-light" id="fadeOutBtn">Esconder</button>
+		</div>
+		<div class="container bg-dark text-white pb-2 mb-2">
+			<h3>fadeIn()</h3>
+			<p style="display: none;" id="fadeInP">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur.</p>
+			<button class="btn btn-light" id="fadeInBtn">Mostar</button>
+		</div>
+		<div class="container bg-dark text-white pb-2 mb-2">
+			<h3>fadeToggle()</h3>
+			<p id="fadeToggleP">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur.</p>
+			<button class="btn btn-light" id="fadeToggleBtn">Esconder/Mostrar</button>
+		</div>
+		<div class="container bg-dark text-white pb-2 mb-2">
+			<h3>fadeTo</h3>
+			<p id="fadeToP">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<button class="btn btn-light" id="fadeToBtn">Fade to 40%</button>
+		</div>
+	</article>
+
+	<script src="_js/jquery-3.3.1.js"></script>
+	<script src="_js/bootstrap.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#fadeInBtn").click(function(){
+				$("#fadeInP").fadeIn();
+			});
+			$("#fadeOutBtn").click(function(){
+				$("#fadeOutP").fadeOut(400);
+			});
+			$("#fadeToggleBtn").click(function(){
+				$("#fadeToggleP").fadeToggle("slow");
+			});
+			$("#fadeToBtn").click(function(){
+				$("#fadeToP").fadeTo("fast", 0.4);
+			});
+		});
+	</script>
+</body>
+</html>
