@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery - Slide</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="_css/bootstrap.css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+</head>
+	<body>
+		<header class="bg-dark">
+			<h1 class="text-white text-center">jQuery - Slide</h1>
+		</header>
+		<article class="bg-light container py-4">
+			<h2>Os métodos slide</h2>
+			<p>Os métodos slide, mostram ou escondem um elemento junto com um efeito deslizante.</p>
+			<dl>
+				<dt>slideDown(speed, callback)</dt>
+				<dd>Mostra um elemento deslizando-o para baixo</dd>
+				<dt>slideUp(speed, callback)</dt>
+				<dd>Oculta um elemento deslizando-o para cima</dd>
+				<dt>slideToggle(speed, callback)</dt>
+				<dd>Oculta um elemento se ele estvier a amostra e vice-versa</dd>
+			</dl>
+			<hr>
+			<h2>Exemplos</h2>
+			<div class="container">
+				<p style="display: none;" id="slideP">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+			<div class="btn-group">
+				<button type="button" id="slideDownBtn" class="btn btn-success">slideDown</button>
+				<button type="button" id="slideUpBtn" class="btn btn-success">slideUp</button>
+				<button type="button" id="slideToggleBtn" class="btn btn-success">Toggle</button>
+			</div>
+		</article>
+		<script type="text/javascript" src="_js/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#slideDownBtn").click(function(){
+					$("#slideP").slideDown("fast");
+				});
+				$("#slideUpBtn").click(function(){
+					$("#slideP").slideUp("slow");
+				});
+				$("#slideToggleBtn").click(function(){
+					$("#slideP").slideToggle(450);
+				});
+			});
+		</script>
+	</body>
+</html>
