@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery - Animate</title>
+	<link rel="stylesheet" type="text/css" href="_css/bootstrap.css"/>
+</head>
+<body>
+	<header class="container-fluid bg-success pb-1">
+		<h1 class="text-white">jQuery - Animate</h1>
+	</header>
+	<article class="container bg-light pb-4">
+		<p>A estrutura do <code>animate</code> é:</p>
+		<code>$(seletor).animate({parametros}, velocidade, callback);</code>
+		<ul class="list-unstyled">
+			<li>Os parâmetros são as propriedades CSS alteradas na animação.</li>
+			<li>Como outros métodos animados, a velocidade é: SLOW, FAST ou em milisegundos</li>
+			<li>Callback é uma função que será executada quando a animação terminar.</li>
+		</ul>
+		<div class="container">
+			<div style="width: 100px;height: 100px;left: 0px;position: relative;" id="exemplo1" class="bg-success text-light text-sm-center">Target</div><br/>
+			<button type="button" id="exemplo1btn" class="btn btn-outline-success">Start Animation</button>
+		</div>
+		<div class="container bg-dark px-4 pt-2 my-2">
+		<span class="text-light">Código</span>
+		<hr class="bg-light">
+		<code><pre style="font-size: 13pt;" class="text-light">
+$("#exemplo1btn").click(function(){
+	$("#exemplo1").animate({left:'250px'});
+});
+		</pre></code>
+	</div>
+	<h2>Manipulando mútiplas propriedades CSS</h2>
+	<p>Separe as propriedades com vírgulas para fazer mútiplas animações:</p>
+	<div class="container">
+			<div style="width: 100px;height: 100px;left: 0px;position: relative;" id="exemplo2" class="bg-warning text-light text-sm-center">Target</div><br/>
+			<button type="button" id="exemplo2btn" class="btn btn-outline-danger">Start Animation</button>
+		</div>
+		<div class="container bg-dark px-4 pt-2 my-2">
+		<span class="text-light">Código</span>
+		<hr class="bg-light">
+		<code><pre style="font-size: 13pt;" class="text-light">
+$("#exemplo2btn").click(function(){
+	$("#exemplo2").animate({
+		left: '250px',
+		opacity: '0.5',
+		height: '150px',
+		width: '150px'
+	});
+});
+		</pre></code>
+	</div>
+	<div class="jumbotron">
+		<h3>É possível manipular todos os elementos CSS com o método animate()?</h3>
+		<p>Sim, mas lembre-se que todos as propriedades devem ser escritas em camel-case, por exemplo: use paddingLeft em vez de padding-left ou marginRight em vez de margin-right.</p>
+	</div>
+	<h2>Usando valores relativos</h2>
+	<p>Esta forma de fazer a animação permite incrementar valores com os operadores aritméticos += e -=</p>
+	<div class="container bg-dark px-4 pt-2 my-2">
+		<span class="text-light">Código</span>
+		<hr class="bg-light">
+		<code><pre style="font-size: 13pt;" class="text-light">
+$("#exemplo2btn").click(function(){
+	$("#exemplo2").animate({
+		left: '250px',
+		opacity: '0.5',
+		height: '+=150px',
+		width: '-=150px'
+	});
+});
+		</pre></code>
+	</div>
+	<h2>Usando valores pré-definidos</h2>
+	<p>Você pode usar os valores "show", "hide" e "toggle":</p>
+	<div class="container bg-dark px-4 pt-2 my-2">
+		<span class="text-light">Código</span>
+		<hr class="bg-light">
+		<code><pre style="font-size: 13pt;" class="text-light">
+$("#exemplo2btn").click(function(){
+	$("#exemplo2").animate({
+		height: 'toggle'
+	});
+});
+		</pre></code>
+	</div>
+	<h2>Fila de animações</h2>
+	<p>Você pode criar uma fila de animação, jQuery irá executar uma por uma.</p>
+<div class="container">
+			<div style="width: 100px;height: 100px;left: 0px;position: relative;" id="exemplo3" class="bg-warning text-light text-sm-center">Target</div><br/>
+			<button type="button" id="exemplo3btn" class="btn btn-outline-danger">Start Animation</button>
+		</div>
+		<div class="container bg-dark px-4 pt-2 my-2">
+		<span class="text-light">Código</span>
+		<hr class="bg-light">
+		<code><pre style="font-size: 13pt;" class="text-light">
+$("#exemplo3btn").click(function(){
+	$("#exemplo3").animate({height:'300px',opacity:'0.4'},"slow");
+	$("#exemplo3").animate({width:'300px',opacity:'0.8'},'slow');
+	$("#exemplo3").animate({height:'100px',opacity:'0.4'});
+	$("#exemplo3").animate({width:'100px',opacity:'0.8'},'slow');
+});
+		</pre></code>
+	</div>
+	</article>
+
+<script type="text/javascript" src="_js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="_js/bootstrap.js"></script>
+<script type="text/javascript">
+	$("#exemplo1btn").click(function(){
+		$("#exemplo1").animate({left:'250px'});
+	});
+	$("#exemplo2btn").click(function(){
+		$("#exemplo2").animate({
+			left: '250px',
+			opacity: '0.5',
+			height: '150px',
+			width: '150px'
+		});
+	});
+	$("#exemplo3btn").click(function(){
+		$("#exemplo3").animate({height:'300px',opacity:'0.4'},"slow");
+		$("#exemplo3").animate({width:'300px',opacity:'0.8'},'slow');
+		$("#exemplo3").animate({height:'100px',opacity:'0.4'});
+		$("#exemplo3").animate({width:'100px',opacity:'0.8'},'slow');
+	});
+</script>
+</body>
+</html>
