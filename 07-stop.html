@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery - Stop</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="_css/bootstrap.css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		p{
+			text-indent: 5%;
+		}
+	</style>
+</head>
+<body>
+	<header class="container-fluid bg-success py-1">
+		<h1 class="text-light text-left text-sm-center">jQuery - Stop</h1>
+	</header>
+	<article class="container bg-light p-4 my-2">
+		<h1>O método Stop()</h1>
+		<div class="container jumbotron">
+			<h1>Observação</h1>
+			<p style="text-indent: 0px;">Este conteúdo têm como pré-requisito o método <code>Animate()</code>.<br/> <a href="06-animate.html" target="_blank">Clique aqui</a> para acessar a página sobre o método <code>Animate()</code>.</p>
+		</div>
+		<p>O método Stop serve para interromper uma animação.</p>
+		<!-- Exemplo -->
+		<div class="container bg-white py-2">
+			<div class="btn-group">
+				<button type="button" class="btn btn-outline-success" id="ex1start">Iniciar Animação</button>
+				<button type="button" class="btn btn-outline-danger" id="ex1stop">Parar Animacao</button>
+			</div>
+			<br/><br/>
+			<div style="width: 100px;height: 100px;" class="bg-primary text-light text-center" id="ex1target">Target</div>
+		</div>
+		<!--Exemplo-->
+		<button type="button" class="btn btn-success m-3" data-target="#exemplo-nav" data-toggle="collapse">Mostrar código</button>
+		<div class="container bg-dark px-4 pt-2 my-2 collapse" id="exemplo-nav">
+
+			<span class="text-light">Código</span>
+
+			<code><pre style="font-size: 13pt;" class="text-light">
+$(document).ready(function(){
+	$("#ex1start").click(function(){
+		$("#ex1target").animate({
+			height: '200',
+			width: '200'},
+			3000);
+	});
+	$("#ex1stop").click(function(){
+		$("#ex1target").stop();
+	});
+});
+			</pre></code>
+	</div>
+	<!-- fim exemplo -->
+	</article>
+	<script type="text/javascript" src="_js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="_js/popper.min.js"></script>
+	<script type="text/javascript" src="_js/bootstrap.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#ex1start").click(function(){
+				$("#ex1target").animate({
+					height: '200',
+					width: '200'},
+					3000);
+			});
+			$("#ex1stop").click(function(){
+				$("#ex1target").stop();
+			});
+		});
+	</script>
+</body>
+</html>
